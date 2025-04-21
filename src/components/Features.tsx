@@ -16,14 +16,14 @@ const FeatureCard = ({
   index: number;
 }) => {
   return (
-    <Card className="feature-card overflow-hidden group hover:-translate-y-1 transition-all duration-300 border-none shadow-md hover:shadow-xl">
-      <CardContent className="p-0">
-        <div className="relative p-6 z-10">
+    <Card className="feature-card overflow-hidden group h-full hover:-translate-y-1 transition-all duration-300 ease-in-out border-none shadow-md hover:shadow-xl">
+      <CardContent className="p-0 h-full">
+        <div className="relative p-6 z-10 h-full flex flex-col">
           <div className="coin-icon mb-4 group-hover:scale-110 transition-transform duration-300 group-hover:bg-yellow-100">
             {icon}
           </div>
           <h3 className="text-xl font-semibold mb-2 group-hover:text-coin-gold transition-colors duration-300">{title}</h3>
-          <p className="text-gray-600">{description}</p>
+          <p className="text-gray-600 flex-grow">{description}</p>
         </div>
         
         {/* Background gradient decorative element */}
@@ -90,7 +90,14 @@ const Features = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div 
+              key={index} 
+              className="animate-fade-in" 
+              style={{ 
+                animationDelay: `${index * 0.1}s`,
+                height: '100%' // Ensure consistent height
+              }}
+            >
               <FeatureCard {...feature} index={index} />
             </div>
           ))}
