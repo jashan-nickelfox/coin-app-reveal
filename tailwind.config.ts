@@ -61,6 +61,7 @@ export default {
 				'coin-silver': '#c0c0c0',
 				'coin-light': '#f8f9fa',
 				'coin-dark': '#343a40',
+				'brown-dark': '#4B3621',
 			},
 			backgroundImage: {
 				'gold-gradient': 'linear-gradient(90deg,#FFC41E 0%,#936004 29.33%,#E39407 79.81%,#FFC41E 100%)',

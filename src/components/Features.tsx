@@ -22,18 +22,18 @@ const FeatureCard = ({
           className={cn(
             "absolute inset-0 z-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-xl",
             index % 3 === 0
-              ? "bg-coin-gold"
+              ? "bg-coin"
               : index % 3 === 1
-              ? "bg-coin-navy"
-              : "bg-coin-dark"
+              ? "bg-coin"
+              : "bg-coin"
           )}
         ></div>
 
         <div className="relative p-6 z-10 h-full flex flex-col">
-          <div className="coin-icon mb-4 group-hover:scale-110 transition-transform duration-300 group-hover:bg-yellow-100">
+          <div className="coin-icon mb-4 h-14 w-14 flex items-center justify-center rounded-full bg-yellow-100 group-hover:scale-110 transition-transform duration-300">
             {icon}
           </div>
-          <h3 className="text-xl font-semibold mb-2 group-hover:text-coin-gold transition-colors duration-300">
+          <h3 className="text-xl font-semibold mb-2 group-hover:text-coin-red transition-colors duration-300">
             {title}
           </h3>
           <p className="text-gray-600 flex-grow">{description}</p>
@@ -46,37 +46,37 @@ const FeatureCard = ({
 const Features = () => {
   const features = [
     {
-      icon: <Camera className="h-6 w-6" />,
+      icon: <Camera className="h-6 w-6 text-gray-600" />,
       title: "Coin Identification",
       description:
         "Snap a photo and instantly identify any coin with our powerful AI recognition system.",
     },
     {
-      icon: <Star className="h-6 w-6" />,
+      icon: <Star className="h-6 w-6 text-gray-600" />,
       title: "Coin Grading",
       description:
         "Get professional-level condition assessment with our automated Sheldon grading scale technology.",
     },
     {
-      icon: <Coins className="h-6 w-6" />,
+      icon: <Coins className="h-6 w-6 text-gray-600" />,
       title: "Mint Error Detection",
       description:
         "Discover valuable minting errors that could make your coins worth significantly more.",
     },
     {
-      icon: <Database className="h-6 w-6" />,
+      icon: <Database className="h-6 w-6 text-gray-600" />,
       title: "Collection Management",
       description:
         "Organize, track, and manage your entire coin collection in one secure place.",
     },
     {
-      icon: <BookOpen className="h-6 w-6" />,
+      icon: <BookOpen className="h-6 w-6 text-gray-600" />,
       title: "Educational Content",
       description:
         "Access exclusive articles and resources in our 'Coin Lounge' to enhance your knowledge.",
     },
     {
-      icon: <Globe className="h-6 w-6" />,
+      icon: <Globe className="h-6 w-6 text-gray-600" />,
       title: "Multi-Currency Support",
       description:
         "Track coins from around the globe with extensive international currency database.",

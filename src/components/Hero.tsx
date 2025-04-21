@@ -69,7 +69,7 @@ const Hero = () => {
                 
                 {/* Screenshot */}
                 <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" 
+                  src="src/assests/images/ss2.svg" 
                   alt="CoinApp running on phone"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -78,11 +78,11 @@ const Hero = () => {
             </div>
 
             {/* Secondary device (left behind) */}
-            <div className="absolute left-0 sm:left-7 top-10 z-10 opacity-80 scale-[0.85] animate-float" style={{ animationDelay: '0.3s' }}>
+            <div className="absolute left-0 sm:left-7 top-10 z-10 opacity-85 scale-[0.85] animate-float" style={{ animationDelay: '0.3s' }}>
               <div className="relative mx-auto w-[280px] h-[570px] rounded-[2.5rem] border-[14px] border-gray-900 bg-gray-800 shadow-xl overflow-hidden -rotate-12">
                 {/* Screenshot */}
                 <img 
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=400&q=80" 
+                  src="src/assests/images/ss1.svg" 
                   alt="CoinApp feature screen"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -91,11 +91,11 @@ const Hero = () => {
             </div>
 
             {/* Third device (right behind) */}
-            <div className="absolute right-0 sm:right-7 top-20 z-10 opacity-80 scale-[0.8] animate-float" style={{ animationDelay: '0.5s' }}>
+            <div className="absolute right-0 sm:right-7 top-20 z-10 opacity-85 scale-[0.8] animate-float" style={{ animationDelay: '0.5s' }}>
               <div className="relative mx-auto w-[280px] h-[570px] rounded-[2.5rem] border-[14px] border-gray-900 bg-gray-800 shadow-xl overflow-hidden rotate-12">
                 {/* Screenshot */}
                 <img 
-                  src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=400&q=80" 
+                  src="src/assests/images/ss.svg" 
                   alt="CoinApp feature screen"
                   className="w-full h-full object-cover"
                   loading="lazy"
