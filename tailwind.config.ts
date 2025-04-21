@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -26,12 +25,12 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#FFC41E',
+					foreground: '#936004'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#E39407',
+					foreground: '#fff'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -42,8 +41,8 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					DEFAULT: '#936004',
+					foreground: '#fff'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -53,12 +52,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom colors for Coin App
+				// Custom CoinApp Colors
+				'gold': '#FFC41E',
+				'darkGold': '#936004',
+				'amber': '#E39407',
 				'coin-navy': '#1a365d',
-				'coin-gold': '#d4af37',
+				'coin-gold': '#FFC41E',
 				'coin-silver': '#c0c0c0',
 				'coin-light': '#f8f9fa',
 				'coin-dark': '#343a40',
+			},
+			backgroundImage: {
+				'gold-gradient': 'linear-gradient(90deg,#FFC41E 0%,#936004 29.33%,#E39407 79.81%,#FFC41E 100%)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
