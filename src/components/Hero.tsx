@@ -69,7 +69,7 @@ const Hero = () => {
                 
                 {/* Screenshot */}
                 <img 
-                  src="src/assests/images/ss2.svg" 
+                  src="src/assests/ss2.svg" 
                   alt="CoinApp running on phone"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -82,7 +82,7 @@ const Hero = () => {
               <div className="relative mx-auto w-[280px] h-[570px] rounded-[2.5rem] border-[14px] border-gray-900 bg-gray-800 shadow-xl overflow-hidden -rotate-12">
                 {/* Screenshot */}
                 <img 
-                  src="src/assests/images/ss1.svg" 
+                  src="src/assests/ss1.svg" 
                   alt="CoinApp feature screen"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -95,7 +95,7 @@ const Hero = () => {
               <div className="relative mx-auto w-[280px] h-[570px] rounded-[2.5rem] border-[14px] border-gray-900 bg-gray-800 shadow-xl overflow-hidden rotate-12">
                 {/* Screenshot */}
                 <img 
-                  src="src/assests/images/ss.svg" 
+                  src="src/assests/ss.svg" 
                   alt="CoinApp feature screen"
                   className="w-full h-full object-cover"
                   loading="lazy"

@@ -60,19 +60,19 @@ const HowItWorks = () => {
       icon: <Camera className="h-6 w-6" />,
       title: "Take a Photo",
       description: "Snap a clear photo of both sides of your coin using the CoinApp camera.",
-      imageSrc: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=400&q=80"
+      imageSrc: "src/assests/identification.svg"
     },
     {
       icon: <Star className="h-6 w-6" />,
       title: "Get Results",
       description: "Receive instant identification, grading, and valuation details.",
-      imageSrc: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80"
+      imageSrc: "src/assests/ss1.svg"
     },
     {
       icon: <Database className="h-6 w-6" />,
       title: "Manage Collection",
       description: "Add to your digital collection with all details automatically saved.",
-      imageSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=400&q=80" 
+      imageSrc: "src/assests/collection.svg" 
     }
   ];
 
