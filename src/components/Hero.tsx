@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Download, Camera, Star } from 'lucide-react';
@@ -69,7 +68,7 @@ const Hero = () => {
                 
                 {/* Screenshot */}
                 <img 
-                  src="src/assests/ss2.svg" 
+                  src="/ss2.svg" 
                   alt="CoinApp running on phone"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -82,7 +81,7 @@ const Hero = () => {
               <div className="relative mx-auto w-[280px] h-[570px] rounded-[2.5rem] border-[14px] border-gray-900 bg-gray-800 shadow-xl overflow-hidden -rotate-12">
                 {/* Screenshot */}
                 <img 
-                  src="src/assests/ss1.svg" 
+                  src="/ss1.svg" 
                   alt="CoinApp feature screen"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -95,7 +94,7 @@ const Hero = () => {
               <div className="relative mx-auto w-[280px] h-[570px] rounded-[2.5rem] border-[14px] border-gray-900 bg-gray-800 shadow-xl overflow-hidden rotate-12">
                 {/* Screenshot */}
                 <img 
-                  src="src/assests/ss.svg" 
+                  src="/ss.svg" 
                   alt="CoinApp feature screen"
                   className="w-full h-full object-cover"
                   loading="lazy"

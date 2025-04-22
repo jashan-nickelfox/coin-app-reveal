@@ -12,25 +12,25 @@ import { Play, Pause } from "lucide-react";
 
 const screenshots = [
   {
-    src: "src/assests/ss2.svg",
+    src: "/ss2.svg",
     alt: "App Dashboard",
     caption: "Powerful Dashboard",
     feature: "Collection Overview"
   },
   {
-    src: "src/assests/identification.svg",
+    src: "/identification.svg",
     alt: "Coin Identification",
     caption: "Instant Recognition",
     feature: "AI Identification"
   },
   {
-    src: "src/assests/collection.svg",
+    src: "/collection.svg",
     alt: "Collection Management",
     caption: "Organize Your Collection",
     feature: "Smart Organization"
   },
   {
-    src: "src/assests/premium.svg",
+    src: "/premium.svg",
     alt: "Mint Error Detection",
     caption: "Get Premium Account",
     feature: "Premium Account"
