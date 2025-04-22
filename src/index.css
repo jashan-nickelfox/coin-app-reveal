@@ -7,51 +7,84 @@
 
 @layer base {
   :root {
-    /* Preserve neutral background, add CoinApp colors */
-    background: linear-gradient(90deg, #FFC41E 0%, #936004 29.33%, #E39407 79.81%, #FFC41E 100%);
-    --foreground: 215 25% 27%;
+    /* Light mode variables */
+    --background: #ffffff;
+    --foreground: #936004;
 
-    --card: 0 0% 100%;
+    --card: #ffffff;
     --card-foreground: #936004;
 
-    --popover: 0 0% 100%;
+    --popover: #ffffff;
     --popover-foreground: #936004;
 
-    --primary: 45 100% 55%;
+    --primary: #FFC41E;
     --primary-foreground: #936004;
 
-    --secondary: 38 86% 49%;
+    --secondary: #E39407;
     --secondary-foreground: #fff;
 
-    --muted: 39 89% 80%;
+    --muted: rgba(255, 196, 30, 0.8);
     --muted-foreground: #936004;
 
-    --accent: 40 35% 65%;
+    --accent: rgba(147, 96, 4, 0.65);
     --accent-foreground: #E39407;
 
-    --destructive: 0 84% 60%;
+    --destructive: #ef4444;
     --destructive-foreground: #936004;
 
-    --border: 45 60% 90%;
-    --input: 45 60% 90%;
+    --border: rgba(255, 196, 30, 0.9);
+    --input: rgba(255, 196, 30, 0.9);
     --ring: #FFC41E;
 
     --radius: 1.1rem;
   }
 
+  .dark {
+    /* Dark mode variables */
+    --background: #222222;
+    --foreground: #FFC41E;
+
+    --card: #2d2d2d;
+    --card-foreground: #FFC41E;
+
+    --popover: #2d2d2d;
+    --popover-foreground: #FFC41E;
+
+    --primary: #FFC41E;
+    --primary-foreground: #222222;
+
+    --secondary: #E39407;
+    --secondary-foreground: #000000;
+
+    --muted: rgba(255, 196, 30, 0.2);
+    --muted-foreground: #c0c0c0;
+
+    --accent: rgba(255, 196, 30, 0.2);
+    --accent-foreground: #FFC41E;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --border: rgba(255, 196, 30, 0.3);
+    --input: rgba(255, 196, 30, 0.3);
+    --ring: #FFC41E;
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] font-sans transition-colors duration-300;
+  }
+
   *, *:focus-visible {
     @apply border-border outline-none;
   }
-  body {
-    @apply bg-background text-[#936004] font-sans;
-  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply font-bold text-darkGold leading-tight tracking-tight;
+    @apply font-bold text-darkGold dark:text-gold leading-tight tracking-tight;
   }
   a, button, .btn, .feature-card {
     outline: none;
@@ -81,17 +114,23 @@
 
   /* Feature Cards - uniform sizes, shadows, interactions */
   .feature-card {
-    @apply bg-gradient-to-tr from-white via-gold/30 to-white rounded-2xl shadow-lg border border-gold min-h-[320px] min-w-[270px] flex flex-col justify-between p-7 hover:-translate-y-2 transition-transform;
+    @apply bg-gradient-to-tr from-white via-gold/30 to-white dark:from-gray-800 dark:via-gold/10 dark:to-gray-800 rounded-2xl shadow-lg border border-gold min-h-[320px] min-w-[270px] flex flex-col justify-between p-7 hover:-translate-y-2 transition-transform;
     box-shadow: 0 6px 32px 0 #9360041A, 0 1.5px 6px #FFC41E26;
+  }
+  .dark .feature-card {
+    box-shadow: 0 6px 32px 0 rgba(255, 196, 30, 0.1), 0 1.5px 6px rgba(255, 196, 30, 0.15);
   }
   .feature-card:focus, .feature-card:focus-visible, .feature-card:hover {
     border-color: #E39407 !important;
     box-shadow: 0 12px 36px #E3940733, 0 4px 16px #FFC41E33;
     outline: none;
   }
+  .dark .feature-card:focus, .dark .feature-card:focus-visible, .dark .feature-card:hover {
+    box-shadow: 0 12px 36px rgba(227, 148, 7, 0.2), 0 4px 16px rgba(255, 196, 30, 0.2);
+  }
 
   .coin-icon {
-    @apply text-gold bg-gradient-to-br from-gold/20 to-white/50 shadow-lg inline-flex items-center justify-center rounded-full p-2;
+    @apply text-gold bg-gradient-to-br from-gold/20 to-white/50 dark:from-gold/10 dark:to-gray-800/50 shadow-lg inline-flex items-center justify-center rounded-full p-2;
   }
 
   .section-padding {
@@ -104,6 +143,9 @@
   .text-gradient {
     @apply text-transparent bg-clip-text;
     background-image: linear-gradient(90deg,#FFC41E 0%,#936004 47%,#E39407 79.81%,#FFC41E 100%);
+  }
+  .dark .text-gradient {
+    background-image: linear-gradient(90deg,#FFC41E 0%,#E39407 47%,#FFC41E 79.81%,#E39407 100%);
   }
 
   .link, a {
@@ -128,6 +170,10 @@
     background: #FFC41E44;
     color: #936004;
   }
+  .dark ::selection {
+    background: #FFC41E44;
+    color: #FFC41E;
+  }
 }
 
 /* Utility for CTA text */
@@ -135,8 +181,11 @@
   color: #E39407;
   text-shadow: 0 2px 8px #FFC41E66;
 }
-
-.card {
-  @apply rounded-2xl shadow-lg bg-gradient-to-tr from-gold/20 via-white to-gold/20 border-gold border px-8 py-7;
+.dark .cta-highlight {
+  color: #FFC41E;
+  text-shadow: 0 2px 8px rgba(255, 196, 30, 0.4);
 }
 
+.card {
+  @apply rounded-2xl shadow-lg bg-gradient-to-tr from-gold/20 via-white to-gold/20 dark:from-gold/5 dark:via-gray-800 dark:to-gold/5 border-gold border px-8 py-7;
+}

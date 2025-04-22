@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
@@ -9,12 +10,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-to-r from-gold via-amber to-darkGold text-white hover:from-darkGold hover:via-gold hover:to-amber hover:text-white",
-        destructive: "bg-red-600 text-white hover:bg-red-700",
-        outline: "border-2 border-gold text-gold hover:bg-gold/10 hover:text-darkGold",
-        secondary: "bg-gold text-darkGold hover:bg-amber hover:text-white",
-        ghost: "hover:bg-amber/20 hover:text-amber",
-        link: "underline text-gold hover:text-amber",
+        default: "bg-gradient-to-r from-gold via-amber to-darkGold text-white hover:from-darkGold hover:via-gold hover:to-amber hover:text-white dark:from-gold dark:via-amber dark:to-darkGold",
+        destructive: "bg-red-600 text-white hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-600",
+        outline: "border-2 border-gold text-gold hover:bg-gold/10 hover:text-darkGold dark:text-gold dark:hover:bg-gold/20 dark:hover:text-gold",
+        secondary: "bg-gold text-darkGold hover:bg-amber hover:text-white dark:bg-amber dark:text-black dark:hover:bg-gold",
+        ghost: "hover:bg-amber/20 hover:text-amber dark:hover:bg-gold/20 dark:hover:text-gold",
+        link: "underline text-gold hover:text-amber dark:text-gold dark:hover:text-amber",
       },
       size: {
         default: "h-11 px-7 py-3",
