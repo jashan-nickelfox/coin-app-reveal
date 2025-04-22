@@ -3,6 +3,14 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Download, Camera, Star } from 'lucide-react';
 
 const Hero = () => {
+  const handleLearnMore = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const featuresSection = document.getElementById('features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-20 md:py-28 bg-gradient-to-br from-white via-gray-50 to-coin-light relative overflow-hidden">
       {/* Decorative elements */}
@@ -31,11 +39,22 @@ const Hero = () => {
               Your ultimate mobile companion for numismatists — powered by advanced AI, designed for precision, and trusted worldwide.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-5">
-              <Button className="btn-primary flex items-center shadow-lg hover:scale-105 transition-all duration-150 group">
-                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-                Download Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" className="btn-outline border-2 shadow hover:scale-105 transition-all duration-150">
+              <a
+                href="https://apps.apple.com/us/app/coin-scan-value-identifier/id6740345697"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button className="btn-primary flex items-center shadow-lg hover:scale-105 transition-all duration-150 group w-full">
+                  <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+                  Download Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+              <Button 
+                variant="outline" 
+                className="btn-outline border-2 shadow hover:scale-105 transition-all duration-150"
+                onClick={handleLearnMore}
+              >
                 Learn More
               </Button>
             </div>

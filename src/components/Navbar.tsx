@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   return (
@@ -21,10 +20,6 @@ const Navbar = () => {
             <a href="#how-it-works" className="text-gray-600 hover:text-coin-navy transition-colors">How It Works</a>
             <a href="#contact" className="text-gray-600 hover:text-coin-navy transition-colors">Contact</a>
           </nav>
-          
-          <div>
-            <Button className="btn-primary">Download Now</Button>
-          </div>
         </div>
       </div>
     </header>
