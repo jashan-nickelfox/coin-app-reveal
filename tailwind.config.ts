@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -66,6 +65,8 @@ export default {
 			},
 			backgroundImage: {
 				'gold-gradient': 'linear-gradient(90deg,#FFC41E 0%,#936004 29.33%,#E39407 79.81%,#FFC41E 100%)',
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'metallic': 'linear-gradient(to right, #c0c0c0, #e0e0e0, #c0c0c0)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -92,21 +93,27 @@ export default {
 				'spin-slow': {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' }
-				}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
+				},
+				'pulseSlow': {
+					'0%, 100%': { transform: 'scale(0.1)' },
+					'50%': { transform: 'scale(0.1)' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
 				'slide-in': 'slide-in 0.5s ease-out',
-				'spin-slow': 'spin-slow 3s linear infinite'
+				'spin-slow': 'spin-slow 3s linear infinite',
+				'float': 'float 4s ease-in-out infinite',
+				'pulseSlow': 'pulseSlow 8s ease-in-out infinite',
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
-			},
-			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'metallic': 'linear-gradient(to right, #c0c0c0, #e0e0e0, #c0c0c0)',
 			}
 		}
 	},

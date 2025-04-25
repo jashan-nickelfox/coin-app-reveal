@@ -1,119 +1,112 @@
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Camera, Star, Coins, Database, BookOpen, Globe } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Camera, Star, Coins, Database, BookOpen, Globe, ArrowRight } from 'lucide-react';
 
-const FeatureCard = ({ 
-  icon, 
-  title, 
-  description,
-  index 
-}: { 
-  icon: React.ReactNode; 
-  title: string; 
-  description: string;
-  index: number;
-}) => {
-  return (
-    <Card className="feature-card min-h-full overflow-hidden group hover:-translate-y-1 transition-all duration-300 ease-in-out border-none shadow-md hover:shadow-xl">
-      <CardContent className="p-0 h-full relative">
-        {/* Background gradient decorative element */}
-        <div
-          className={cn(
-            "absolute inset-0 z-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-xl",
-            index % 3 === 0
-              ? "bg-coin"
-              : index % 3 === 1
-              ? "bg-coin"
-              : "bg-coin"
-          )}
-        ></div>
-
-        <div className="relative p-6 z-10 h-full flex flex-col">
-          <div className="coin-icon mb-4 h-14 w-14 flex items-center justify-center rounded-full bg-yellow-100 group-hover:scale-110 transition-transform duration-300">
-            {icon}
-          </div>
-          <h3 className="text-xl font-semibold mb-2 group-hover:text-coin-red transition-colors duration-300">
-            {title}
-          </h3>
-          <p className="text-gray-600 flex-grow">{description}</p>
-        </div>
-      </CardContent>
-    </Card>
-  );
-};
+const features = [
+  {
+    icon: <Camera className="h-8 w-8 text-coin-navy dark:text-coin-gold" />,
+    title: "AI Coin Identification",
+    description: "Easily snap a photo and let AI instantly identify your coin easily."
+  },
+  {
+    icon: <Star className="h-8 w-8 text-coin-navy dark:text-coin-gold" />,
+    title: "Grading & Value Estimation",
+    description: "Professional grading insights and market value predictions."
+  },
+  {
+    icon: <Coins className="h-8 w-8 text-coin-navy dark:text-coin-gold" />,
+    title: "Mint Error Detection",
+    description: "Spot rare minting errors that increase coin value."
+  },
+  {
+    icon: <Database className="h-8 w-8 text-coin-navy dark:text-coin-gold" />,
+    title: "Collection Management",
+    description: "Organize and track your entire collection securely."
+  },
+  {
+    icon: <BookOpen className="h-8 w-8 text-coin-navy dark:text-coin-gold" />,
+    title: "Educational Hub",
+    description: "Access in-depth guides, articles, and numismatic resources."
+  },
+  {
+    icon: <Globe className="h-8 w-8 text-coin-navy dark:text-coin-gold" />,
+    title: "Global Currency Support",
+    description: "Track coins and currencies from around the world and monitor real-time market trend"
+  }
+];
 
 const Features = () => {
-  const features = [
-    {
-      icon: <Camera className="h-6 w-6 text-gray-600" />,
-      title: "Coin Identification",
-      description:
-        "Snap a photo and instantly identify any coin with our powerful AI recognition system.",
-    },
-    {
-      icon: <Star className="h-6 w-6 text-gray-600" />,
-      title: "Coin Grading",
-      description:
-        "Get professional-level condition assessment with our automated Sheldon grading scale technology.",
-    },
-    {
-      icon: <Coins className="h-6 w-6 text-gray-600" />,
-      title: "Mint Error Detection",
-      description:
-        "Discover valuable minting errors that could make your coins worth significantly more.",
-    },
-    {
-      icon: <Database className="h-6 w-6 text-gray-600" />,
-      title: "Collection Management",
-      description:
-        "Organize, track, and manage your entire coin collection in one secure place.",
-    },
-    {
-      icon: <BookOpen className="h-6 w-6 text-gray-600" />,
-      title: "Educational Content",
-      description:
-        "Access exclusive articles and resources in our 'Coin Lounge' to enhance your knowledge.",
-    },
-    {
-      icon: <Globe className="h-6 w-6 text-gray-600" />,
-      title: "Multi-Currency Support",
-      description:
-        "Track coins from around the globe with extensive international currency database.",
-    },
-  ];
-
   return (
-    <section
-      id="features"
-      className="section-padding bg-gradient-to-t from-gray-50 to-white relative overflow-hidden"
-    >
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-coin-gold/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-coin-navy/5 rounded-full blur-3xl"></div>
-      </div>
+    <section id="features" className="section-padding bg-white dark:bg-gray-900 relative overflow-hidden">
+      <style>{`
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes pulseSlow {
+          0%, 100% {
+            opacity: 0.7;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+        @keyframes lineGrow {
+          0% {
+            width: 0%;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+        .fade-in-up {
+          animation: fadeInUp 0.8s ease forwards;
+        }
+        .pulse-slow {
+          animation: pulseSlow 6s ease-in-out infinite;
+        }
+        .line-animate {
+          animation: lineGrow 1s ease forwards;
+        }
+      `}</style>
 
-      <div className="container mx-auto container-padding relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-            Powerful Features for Collectors
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-coin-gold/10 rounded-full blur-3xl pulse-slow"></div>
+      <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-coin-navy/10 rounded-full blur-3xl pulse-slow"></div>
+
+      <div className="container mx-auto px-4 sm:px-8 max-w-6xl relative z-10">
+        <div className="text-center mb-12 fade-in-up" style={{ animationDelay: '0s' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient bg-gradient-to-r from-coin-navy to-coin-gold bg-clip-text text-transparent">
+            Why Choose CoinApp?
           </h2>
-          <p className="text-gray-600 text-lg">
-            Discover the comprehensive toolset that makes CoinApp the preferred choice for numismatists worldwide.
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+            Explore the top features that make CoinApp the essential tool for collectors.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {features.map((feature, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {features.map((feature, idx) => (
             <div
-              key={index}
-              className="h-full animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              key={idx}
+              className="fade-in-up space-y-4"
+              style={{ animationDelay: `${idx * 0.2 + 0.3}s` }}
             >
-              <div className="h-full">
-                <FeatureCard {...feature} index={index} />
+              <div className="flex items-start space-x-6">
+                <div className="flex-shrink-0 transform transition-transform duration-300 hover:scale-110 hover:rotate-3 shadow-lg rounded-full p-4 bg-coin-gold/10">
+                  {feature.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+                </div>
               </div>
+              <div className="h-0.5 bg-gradient-to-r from-coin-navy to-coin-gold rounded-full line-animate"></div>
             </div>
           ))}
         </div>

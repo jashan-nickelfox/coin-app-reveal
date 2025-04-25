@@ -1,6 +1,5 @@
-
-import React from 'react';
-import ThemeToggle from './ThemeToggle';
+import React from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   return (
@@ -9,18 +8,37 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <div className="font-bold text-xl flex items-center">
-              <span className="text-coin-navy dark:text-white">Coin</span>
-              <span className="text-coin-gold">App</span>
-              <span className="ml-1 h-2 w-2 rounded-full bg-coin-gold animate-pulse"></span>
+              <img src="/logo-1.png" alt="CoinApp Logo" className="h-10 w-auto transition-transform hover:scale-105" />
+              <span className="text-coin-goldbrown dark:text-white ml-2">Coin ScanAi</span>
             </div>
           </div>
-          
+
           <div className="flex items-center space-x-8">
             <nav className="hidden md:flex space-x-8">
-              <a href="#features" className="text-gray-600 dark:text-gray-300 hover:text-coin-navy dark:hover:text-white transition-colors">Features</a>
-              <a href="#benefits" className="text-gray-600 dark:text-gray-300 hover:text-coin-navy dark:hover:text-white transition-colors">Benefits</a>
-              <a href="#how-it-works" className="text-gray-600 dark:text-gray-300 hover:text-coin-navy dark:hover:text-white transition-colors">How It Works</a>
-              <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-coin-navy dark:hover:text-white transition-colors">Contact</a>
+              <a
+                href="#features"
+                className="text-gray-600 dark:text-gray-300 hover:text-coin-navy dark:hover:text-white transition-colors"
+              >
+                Features
+              </a>
+              <a
+                href="#benefits"
+                className="text-gray-600 dark:text-gray-300 hover:text-coin-navy dark:hover:text-white transition-colors"
+              >
+                Benefits
+              </a>
+              <a
+                href="#how-it-works"
+                className="text-gray-600 dark:text-gray-300 hover:text-coin-navy dark:hover:text-white transition-colors"
+              >
+                How It Works
+              </a>
+              <a
+                href="#contact"
+                className="text-gray-600 dark:text-gray-300 hover:text-coin-navy dark:hover:text-white transition-colors"
+              >
+                Contact
+              </a>
             </nav>
             <ThemeToggle />
           </div>
