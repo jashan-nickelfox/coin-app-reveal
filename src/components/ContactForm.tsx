@@ -1,97 +1,20 @@
-
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import emailjs from '@emailjs/browser';
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const ContactForm = () => {
   const { toast } = useToast();
-  const [isLoading, setIsLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
 
-  const validateEmail = (email: string) => {
-    return email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-
-    // Validation
-    if (!formData.name.trim()) {
-      toast({
-        title: "Error",
-        description: "Name is required",
-        variant: "destructive",
-      });
-      setIsLoading(false);
-      return;
-    }
-
-    if (!formData.email.trim() || !validateEmail(formData.email)) {
-      toast({
-        title: "Error",
-        description: "Please enter a valid email address",
-        variant: "destructive",
-      });
-      setIsLoading(false);
-      return;
-    }
-
-    try {
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email: 'stephen@coinscanai.com',
-      };
-
-      // Initialize EmailJS with your public key
-      emailjs.init("YOUR_PUBLIC_KEY");
-      
-      await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
-        templateParams,
-      );
-
-      toast({
-        title: "Success",
-        description: "Your message has been sent successfully!",
-      });
-
-      // Clear form
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-
-    } catch (error) {
-      console.error("Error sending email:", error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    toast({
+      title: "Message sent!",
+      description: "We'll get back to you as soon as possible.",
+    });
   };
 
   return (
@@ -107,6 +30,7 @@ const ContactForm = () => {
             </p>
           </div>
 
+          {/* Centered Form Container with Max Width */}
           <div className="flex justify-center">
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10">
               <div className="lg:col-span-3 bg-gray-50 dark:bg-gray-800 p-8 rounded-xl border border-gray-100 dark:border-gray-700">
@@ -121,13 +45,10 @@ const ContactForm = () => {
                         htmlFor="name"
                         className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
                       >
-                        Your Name *
+                        Your Name
                       </label>
                       <Input
                         id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
                         placeholder="Enter Your Name"
                         className="bg-white dark:bg-gray-900 dark:text-white"
                         required
@@ -139,14 +60,11 @@ const ContactForm = () => {
                         htmlFor="email"
                         className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300"
                       >
-                        Email Address *
+                        Email Address
                       </label>
                       <Input
                         id="email"
-                        name="email"
                         type="email"
-                        value={formData.email}
-                        onChange={handleChange}
                         placeholder="Enter Your Email"
                         className="bg-white dark:bg-gray-900 dark:text-white"
                         required
@@ -162,21 +80,14 @@ const ContactForm = () => {
                       </label>
                       <Textarea
                         id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
                         placeholder="Tell us about your project..."
                         className="min-h-[150px] bg-white dark:bg-gray-900 dark:text-white"
+                        required
                       />
                     </div>
 
-                    <Button 
-                      type="submit" 
-                      className="w-full"
-                      disabled={isLoading}
-                    >
-                      <Mail className="mr-2" />
-                      {isLoading ? "Sending..." : "Send Message"}
+                    <Button type="submit" className="btn-primary w-full">
+                      Send Message
                     </Button>
                   </div>
                 </form>
